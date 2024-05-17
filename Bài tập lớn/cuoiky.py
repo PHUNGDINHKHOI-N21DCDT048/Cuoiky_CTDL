@@ -21,42 +21,29 @@ class Dictionary:
         file = open("dict.txt", "a")
         file.write("{}\n".format(newword))
         file.close()
-        # while index < len(self.words) and self.words[index].word < word.word:
-        #     index += 1
-        # self.words.insert(index, word)
 
     def remove_word(self, word):
-            # Đọc dữ liệu từ tệp văn bản
         with open('dict.txt', 'r') as file:
             data = file.readlines()
-        # Chuyển đổi dữ liệu thành một danh sách
         data_list = [line.strip() for line in data]
         count = 0
         exist = -1
-        # Tìm kiếm mục trong danh sách
     
         for a in data_list:
-            
-            # using string find() method
             pos = a.find(word)
             if pos == 0:
                 exist = count
             count = count + 1
-        
-        if exist >= 0 :
-            # print('tìm thấy từ trong từ điểnnnn: ', data_list[exist])
+        if exist >= 0 
             lines = []
             # read file
             with open('dict.txt', 'r') as fp:
-                # read an store all lines into list
+             
                 lines = fp.readlines()
 
-            # Write file
             with open('dict.txt', 'w') as fp:
-                # iterate each line
-                for number, line in enumerate(lines):
-                    # delete line 5 and 8. or pass any Nth line you want to remove
-                    # note list index starts from 0
+            
+                for number, line in enumerate(lines):     
                     if number not in [int(exist)]:
                             fp.write(line)
         
@@ -95,18 +82,14 @@ class Dictionary:
                     word.add_meaning(part_of_speech, definition, example)
 
     def trans(self, search_item):
-            # Đọc dữ liệu từ tệp văn bản
         with open('dict.txt', 'r') as file:
             data = file.readlines()
-        # Chuyển đổi dữ liệu thành một danh sách
         data_list = [line.strip() for line in data]
         count = 0
         exist = -1
-        # Tìm kiếm mục trong danh sách
     
         for a in data_list:
             
-            # using string find() method
             pos = a.find(search_item)
             if pos == 0:
                 exist = count
@@ -137,11 +120,7 @@ def main():
 
         if choice == '1':
             word = input("Nhập từ mới: ")
-            # pos = input("Phân loại từ (danh từ, động từ, tính từ, ...): ")
-            # definition = input("Nghĩa của từ: ")
-            # example = input("Ví dụ minh họa: ")
-            # new_word.add_meaning(pos, definition, example)
-            # print("hhhhhhhhhhhhhhhhhhh", word)
+        
             dictionary.add_word(word)
 
         elif choice == '2':
