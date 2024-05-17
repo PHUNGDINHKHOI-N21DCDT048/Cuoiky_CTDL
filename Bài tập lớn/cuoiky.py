@@ -96,7 +96,7 @@ class Dictionary:
             count = count + 1
         
         if exist >= 0 :
-            print('tìm thấy từ trong từ điểnnnn: ', data_list[exist])
+            print('tìm thấy từ trong từ điển: ', data_list[exist])
         else :   
             print('Không thấy từ trong từ điển')
 
